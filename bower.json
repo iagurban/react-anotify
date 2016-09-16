@@ -1,0 +1,34 @@
+{
+  "name": "react-anotify",
+  "version": "0.0.1",
+  "homepage": "https://github.com/iagurban/react-anotify",
+  "authors": [
+    "Igor Gurban <iagurban@gmail.com>"
+  ],
+  "main": [
+    "dist/index.min.js",
+    "dist/index.min.css"
+  ],
+  "ignore": [
+    "*",
+    "!dist/*.js",
+    "!dist/*.css"
+  ],
+  "description": "Flying pretty and powerful notifications React-component",
+  "dependencies": {
+    "bower-prelude-ls": "*",
+    "prelude-extension": "https://npmcdn.com/prelude-extension@0.0.13/bower.zip",
+    "react-anilist": "*"
+  },
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "react-component",
+    "notifications",
+    "animation",
+    "velocity"
+  ]
+}

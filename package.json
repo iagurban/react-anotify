@@ -1,0 +1,57 @@
+{
+  "name": "react-anotify",
+  "version": "0.0.1",
+  "description": "Flying pretty and powerful notifications React-component",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "mocha test/index.ls --compilers ls:livescript",
+    "coverage": "istanbul cover _mocha -- test/index.ls --require should --compilers ls:livescript",
+    "coveralls": "istanbul cover _mocha -- test/index.ls --require should --compilers ls:livescript  && cat coverage/lcov.info | coveralls"
+  },
+  "author": "Igor Gurban",
+  "dependencies": {
+    "react-anilist": "^0"
+  },
+  "browserify-shim": {
+  },
+  "devDependencies": {
+    "async-ls": "0.0.3",
+    "brace": "git+https://github.com/furqanZafar/brace.git",
+    "brfs": "^1.4.1",
+    "browserify": "^13",
+    "browserify-shim": "^3.8.10",
+    "coveralls": "^2.11.4",
+    "gulp": "*",
+    "gulp-connect": "*",
+    "gulp-if": "*",
+    "gulp-livescript": "*",
+    "gulp-rename": "*",
+    "gulp-streamify": "*",
+    "gulp-stylus": "*",
+    "gulp-uglify": "*",
+    "gulp-util": "*",
+    "istanbul": "^0.4",
+    "anyify": "*",
+    "livescript": "*",
+    "mocha": "^3",
+    "mocha-lcov-reporter": "^1.0.0",
+    "nib": "^1.1.0",
+    "react": "^15",
+    "react-addons-test-utils": "^15",
+    "react-dom": "^15",
+    "react-tools": "*",
+    "should": "^11",
+    "vinyl-source-stream": "^1.0.0",
+    "watchify": "^3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iagurban/react-anotify"
+  },
+  "keywords": [
+    "react-component",
+    "notifications",
+    "animation",
+    "velocity"
+  ]
+}

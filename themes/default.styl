@@ -1,0 +1,36 @@
+// .dynamic > *
+//   border: 1px solid #f00
+
+.anotify
+  &, & .container
+    user-events: none
+
+  .static
+    display: flex
+    flex-direction: column
+    box-sizing: content-box
+    padding: 0
+    margin: 0
+
+    > *
+      flex: 0 0 auto
+
+.basic-notification
+  box-sizing: content-box
+  padding: 10px
+  margin: 4px
+  width: 30%
+  min-width: 200px
+  align-self: flex-end
+  border-radius: 5px
+  box-shadow: 0 2px 6px rgba(0, 0, 0, .5), 0 -1px 8px rgba(0, 0, 0, 0.3) inset
+
+  &.error
+    background: #d22
+    color: #fff
+
+  &.info
+    background: #5cd6ff
+
+  &.warning
+    background: #ffb412

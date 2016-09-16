@@ -1,0 +1,6 @@
+node_modules
+public/components/*.js
+src/*.js
+themes/*.css
+public/components/*.css
+dist
