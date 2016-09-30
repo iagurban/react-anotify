@@ -1,6 +1,6 @@
 {
   "name": "react-anotify",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage": "https://github.com/iagurban/react-anotify",
   "authors": [
     "Igor Gurban <iagurban@gmail.com>"
@@ -16,8 +16,6 @@
   ],
   "description": "Flying pretty and powerful notifications React-component",
   "dependencies": {
-    "bower-prelude-ls": "*",
-    "prelude-extension": "https://npmcdn.com/prelude-extension@0.0.13/bower.zip",
     "react-anilist": "*"
   },
   "moduleType": [

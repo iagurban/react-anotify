@@ -1,7 +1,7 @@
 {
   "name": "react-anotify",
-  "version": "0.0.1",
-  "description": "Flying pretty and powerful notifications React-component",
+  "version": "0.0.2",
+  "description": "Flying powerful notifications React-component",
   "main": "src/index.js",
   "scripts": {
     "test": "mocha test/index.ls --compilers ls:livescript",

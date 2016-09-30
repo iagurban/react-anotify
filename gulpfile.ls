@@ -99,27 +99,24 @@ gulp.task \watch:src:scripts, ->
     gulp.watch <[./src/*.ls]>, <[build:src:scripts]>
 
 # create-standalone-build :: Boolean -> {file :: String, directory :: String} -> Stream
-create-standalone-build = (minify, {file, directory}) ->
-    browserify standalone: \react-anotify, debug: false
-        .add <[./src/index.js]>
-        .exclude \prelude-ls
-        .exclude \prelude-extension
-        .exclude \react
-        .exclude \react-dom
-        .exclude \react-addons-css-transition-group
-        .exclude \react-addons-shallow-compare
-        .exclude \tether
-        .exclude \velocity
-        .transform browserify-shim
-        .bundle!
-        .on \error, -> gulp-util.log arguments
-        .pipe source file
-        .pipe gulp-if minify, (gulp-streamify gulp-uglify!)
-        .pipe gulp.dest directory
+create-standalone-build = (minify, {file, directory}, standalone) ->
+    b = browserify standalone: \react-anotify, debug: false
+    .add <[./src/index.js]>
+
+    if not standalone
+        for <[prelude-ls prelude-extension react react-dom react-addons-css-transition-group react-addons-shallow-compare tether velocity]>
+            b .= exclude ..
+    b.transform browserify-shim
+    .bundle!
+    .on \error, -> gulp-util.log arguments
+    .pipe source file
+    .pipe gulp-if minify, (gulp-streamify gulp-uglify!)
+    .pipe gulp.dest directory
 
 gulp.task \dist, <[build:src:scripts]>, ->
     <- create-standalone-build false, {file: \index.js, directory: \./dist} .on \finish
     <- create-standalone-build true, {file: \index.min.js, directory: \./dist} .on \finish
+    <- create-standalone-build true, {file: \standalone.min.js, directory: \./dist}, true .on \finish
     gulp.src <[./themes/index.styl]>
         .pipe gulp-stylus (stylus-config false)
         .pipe gulp.dest \./dist
